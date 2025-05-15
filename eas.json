@@ -1,7 +1,4 @@
 {
-  "cli": {
-    "appVersionSource": "project"
-  },
   "build": {
     "preview": {
       "android": {
