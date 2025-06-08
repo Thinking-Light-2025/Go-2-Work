@@ -32,7 +32,7 @@ export const FormPessoa = () => {
   const [instagram, setInstagram] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [profileImage, setProfileImage] = useState(null); // Novo estado para a imagem de perfil
+  const [profileImage, setProfileImage] = useState<string | null>(null); // Novo estado para a imagem de perfil
 
   // Define uma imagem de perfil padrão (se nenhuma for selecionada)
   const defaultProfileImage = 'https://via.placeholder.com/150/0000FF/FFFFFF?text=Adicionar+Foto'; // Exemplo de placeholder
