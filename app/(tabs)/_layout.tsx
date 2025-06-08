@@ -1,7 +1,7 @@
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
 import { colors } from '@/src/components/global';
-import { Ionicons } from '@expo/vector-icons'; // Importando ícones do Expo
+import { Ionicons } from '@expo/vector-icons';
 
 export default function Layout() {
   return (
@@ -9,25 +9,26 @@ export default function Layout() {
       <Drawer
         screenOptions={{
           drawerStyle: {
-            backgroundColor: colors.fundo
+            backgroundColor: colors.fundo,
+            width: 270,
           },
-          drawerActiveTintColor: colors.amarelo1,  // opcional
-          drawerInactiveTintColor: colors.textoCinza,         // opcional
+          drawerActiveTintColor: colors.amarelo1,
+          drawerInactiveTintColor: colors.textoCinza,
         }}
       >
         <Drawer.Screen 
           name="Home"
           options={{
-            title: "Home",
+            title: "Início",
             headerTitleStyle: {
               color: colors.tituloBranco
             },
-            headerTintColor: colors.tituloBranco, // Altere 'red' para a cor desejada
+            headerTintColor: colors.tituloBranco, 
             headerStyle: {
-              backgroundColor: colors.fundo2, // Definindo a cor de fundo do cabeçalho
+              backgroundColor: colors.fundo2, 
             },
             drawerIcon: ({ color }) => (
-              <Ionicons name="home-outline" size={24} color={color} /> // Ícone da Home
+              <Ionicons name="home-outline" size={24} color={color} /> 
             ),
           }}
         />
@@ -39,12 +40,12 @@ export default function Layout() {
             headerTitleStyle: {
               color: colors.tituloBranco
             },
-            headerTintColor: colors.tituloBranco, // Altere 'red' para a cor desejada
+            headerTintColor: colors.tituloBranco, 
             headerStyle: {
-              backgroundColor: colors.fundo2, // Definindo a cor de fundo do cabeçalho
+              backgroundColor: colors.fundo2, 
             },
             drawerIcon: ({ color }) => (
-              <Ionicons name="notifications-outline" size={24} color={color} /> // Ícone de Avisos
+              <Ionicons name="notifications-outline" size={24} color={color} /> 
             ),
           }}
         />
@@ -52,16 +53,16 @@ export default function Layout() {
         <Drawer.Screen 
           name="Geral"
           options={{
-            title: "Oportunidades em geral",
+            title: "Oportunidades",
             headerTitleStyle: {
               color: colors.tituloBranco
             },
-            headerTintColor: colors.tituloBranco, // Altere 'red' para a cor desejada
+            headerTintColor: colors.tituloBranco, 
             headerStyle: {
-              backgroundColor: colors.fundo2, // Definindo a cor de fundo do cabeçalho
+              backgroundColor: colors.fundo2, 
             },
             drawerIcon: ({ color }) => (
-              <Ionicons name="briefcase-outline" size={24} color={color} /> // Ícone Geral
+              <Ionicons name="briefcase-outline" size={24} color={color} /> 
             ),
           }}
         />
@@ -73,12 +74,12 @@ export default function Layout() {
             headerTitleStyle: {
               color: colors.tituloBranco
             },
-            headerTintColor: colors.tituloBranco, // Altere 'red' para a cor desejada
+            headerTintColor: colors.tituloBranco, 
             headerStyle: {
-              backgroundColor: colors.fundo2, // Definindo a cor de fundo do cabeçalho
+              backgroundColor: colors.fundo2, 
             },
             drawerIcon: ({ color }) => (
-              <Ionicons name="add-circle-outline" size={24} color={color} /> // Ícone de Criar Vagas
+              <Ionicons name="add-circle-outline" size={24} color={color} /> 
             ),
           }}  
         />
@@ -90,12 +91,12 @@ export default function Layout() {
             headerTitleStyle: {
               color: colors.tituloBranco
             },
-            headerTintColor: colors.tituloBranco, // Altere 'red' para a cor desejada
+            headerTintColor: colors.tituloBranco, 
             headerStyle: {
-              backgroundColor: colors.fundo2, // Definindo a cor de fundo do cabeçalho
+              backgroundColor: colors.fundo2, 
             },
             drawerIcon: ({ color }) => (
-              <Ionicons name="add-circle-outline" size={24} color={color} /> // Ícone de Criar Vagas
+              <Ionicons name="add-circle-outline" size={24} color={color} /> 
             ),
           }}  
         />
@@ -107,16 +108,67 @@ export default function Layout() {
             headerTitleStyle: {
               color: colors.tituloBranco
             },
-            headerTintColor: colors.tituloBranco, // Altere 'red' para a cor desejada
+            headerTintColor: colors.tituloBranco, 
             headerStyle: {
-              backgroundColor: colors.fundo2, // Definindo a cor de fundo do cabeçalho
+              backgroundColor: colors.fundo2, 
             },
             drawerIcon: ({ color }) => (
-              <Ionicons name="settings-outline" size={24} color={color} /> // Ícone de Configurações                    
+              <Ionicons name="settings-outline" size={24} color={color} />                     
             ),
           }}
         />
-        
+        <Drawer.Screen 
+          name="(stack)/detalhesCandidatura"
+          options={{
+            title: "detalhes",
+            headerTitleStyle: {
+              color: colors.tituloBranco
+            },
+            headerTintColor: colors.tituloBranco, 
+            headerStyle: {
+              backgroundColor: colors.fundo2, 
+            },
+            drawerItemStyle: { display: 'none' },
+            drawerIcon: ({ color }) => (
+              <Ionicons name="settings-outline" size={24} color={color} />                     
+            ),
+          }}
+        />
+
+        <Drawer.Screen 
+          name="(stack)/minhaCandidaturaDetalhes"
+          options={{
+            title: "minha",
+            headerTitleStyle: {
+              color: colors.tituloBranco
+            },
+            headerTintColor: colors.tituloBranco, 
+            headerStyle: {
+              backgroundColor: colors.fundo2, 
+            },
+            drawerItemStyle: { display: 'none' },
+            drawerIcon: ({ color }) => (
+              <Ionicons name="settings-outline" size={24} color={color} />                     
+            ),
+          }}
+        />
+        <Drawer.Screen 
+          name="(stack)"
+          options={{
+            title: "stack",
+            headerTitleStyle: {
+              color: colors.tituloBranco
+            },
+            headerTintColor: colors.tituloBranco, 
+            headerStyle: {
+              backgroundColor: colors.fundo2, 
+            },
+            drawerItemStyle: { display: 'none' },
+            drawerIcon: ({ color }) => (
+              <Ionicons name="settings-outline" size={24} color={color} />                     
+            ),
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );

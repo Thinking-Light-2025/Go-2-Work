@@ -2,7 +2,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { verification } from "../interface";
 import { db } from "../../config";
 
-export async function dados_usuario(passData) {
+export async function dados_usuario(passData: { setUsersData: any; setFilteredUsersData: any; setTipoConta: any; setLoading: any; }) {
     const {setUsersData, setFilteredUsersData, setTipoConta, setLoading } = passData
 
     try {
@@ -29,7 +29,7 @@ export async function dados_usuario(passData) {
 };
 
 // Função para buscar as vagas do usuário EMPRESA
-export async function userVagas (userVagasFunc) {
+export async function userVagas (userVagasFunc: { setUserVagasList: any; setFilteredVagas: any; setLoading: any; }) {
   const { setUserVagasList, setFilteredVagas, setLoading } = userVagasFunc
   const userAuth = verification();
   try {
@@ -52,7 +52,7 @@ export async function userVagas (userVagasFunc) {
 };
 
 // Função para buscar as vagas do usuário FREELANCER
-export async function userServicos (userServicosFunc) {
+export async function userServicos (userServicosFunc: { setUserServicosList: any; setFilteredServicos: any; setLoading: any; }) {
   const { setUserServicosList, setFilteredServicos, setLoading } = userServicosFunc
   const userAuth = verification();
   try {

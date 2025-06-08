@@ -1,24 +1,27 @@
-import { StatusBar, StatusBarProps, TouchableOpacity, TouchableOpacityProps } from "react-native"
+import { StatusBar, StatusBarProps, TouchableOpacity, TouchableOpacityProps, StyleSheet} from "react-native"
 import { colors } from "./global"
 import { TextInput, TextInputProps } from "react-native"
 // import { width } from "../firebase/functions/interfaces"
 
-export function Botão({ ...rest }: TouchableOpacityProps) {
+export function Botão({ style, ...rest }: TouchableOpacityProps & { style?: any }) {
   return (
     <TouchableOpacity
-      style={{
-        width: '90%',
-        height: 60,
-        backgroundColor: colors.amarelo2,
-        borderRadius: 10,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      style={[styles.botaoBase, style]}
       {...rest}
     />
-    
-  )
+  );
 }
+
+const styles = StyleSheet.create({
+  botaoBase: {
+    width: '90%',
+    height: 60,
+    backgroundColor: colors.amarelo2,
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 export function BotãoInicio({ ...rest }: TouchableOpacityProps) {
   return (
@@ -75,20 +78,23 @@ export function InputWhite({ ...rest }: TextInputProps) {
   )
 }
 
-export function TxtInput({ ...rest }: TextInputProps) {
+export function TxtInput({style, ...rest }: TextInputProps) {
   return (
     <TextInput
-      style={{
+      style={[
+      {
         width: '90%',
         height: 55,
-        paddingLeft: 30,
+        paddingLeft: 20,
+        paddingRight: 20,
         borderColor: colors.amarelo2,
         color: 'white',
         borderWidth: 1.2,
         borderRadius: 8,
         fontSize: 16,
-
-      }}
+      },
+      style
+    ]}
       {...rest}
     />
   )

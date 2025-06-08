@@ -71,6 +71,15 @@ export default function Layout() {
           },
         }}
         />
+        <Tabs.Screen
+          name="ia"
+          options={{
+            title: "",
+            tabBarIcon: ({focused}) => {
+              return <MaterialCommunityIcons name='robot' color={focused ? colors.amarelo1 : 'gray'} size={30} top={10} />
+            }
+          }}
+        />
       </Tabs>
       
   );

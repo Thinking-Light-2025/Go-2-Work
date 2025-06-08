@@ -9,7 +9,7 @@ import { colors } from '@/src/components/global';
 import { StatusBarObject } from '@/src/components/objects';
 import { AntDesign } from '@expo/vector-icons';
 
-import { DropdownComponent } from '@/src/components/dropdawn';
+import { DropdownComponent } from '@/src/components/dropdown';
 
 export default function CreateAccount() {
   const router = useRouter();

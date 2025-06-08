@@ -1,12 +1,21 @@
+// Account.tsx
+
+// Imports do React
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, StyleSheet, ActivityIndicator, ScrollView, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, StyleSheet, ActivityIndicator, ScrollView, Alert, TouchableOpacity, Image } from 'react-native';
+
+// Imports do Expo
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
-import { colors } from '@/src/components/global';
-import { Users, Vagas, width, height, Empresas, Freelancer, servicoFreelancer } from '@/src/firebase/functions/interface';
 import { useRouter } from 'expo-router';
+
+// Imports de componentes nativos
+import { colors } from '@/src/components/global';
+import { StatusBarObject } from '@/src/components/objects';
+
+// Imports do Firebase
+import { Users, Vagas, width, height, Empresas, Freelancer, servicoFreelancer } from '@/src/firebase/functions/interface';
 import { dados_usuario, userServicos, userVagas } from '@/src/firebase/functions/get/getInforUser';
 import { handleDeleteVaga } from '@/src/firebase/functions/delete/deleteJob';
-import { StatusBarObject } from '@/src/components/objects';
 import { signOut } from 'firebase/auth';
 import { auth } from '@/src/firebase/config';
 
@@ -43,11 +52,15 @@ export default function Account() {
     );
   }
 
+  // Inicio da parte que renderiza a tela da empresa.
   const renderUserEmpresa = ({ item }: { item: Empresas }) => (
     <View style={styles.data}>
       <View style={styles.areaTop}>
+        <Image source={{uri: 'https://reactjs.org/logo-og.png'}} style={styles.fotoPerfil}/>
+      <View style={styles.textContainer}>
         <Text style={styles.title}>{item.nome_empresa}</Text>
         <Text style={styles.subTitle}>{item.email}</Text>
+      </View>
       </View>
       <View style={styles.areaLow}>
         <View style={styles.areaLow_top}>
@@ -63,6 +76,9 @@ export default function Account() {
       </View>
     </View>
   );
+  // Fim da parte que renderiza a tela da empresa.
+
+  // Inicio da parte que renderiza a tela de pessoas.
   const renderUserPessoa = ({ item }: { item: Users }) => (
     <View style={styles.data}>
       <View style={styles.areaTop}>
@@ -85,6 +101,9 @@ export default function Account() {
       </View>
     </View>
   );
+  // Fim da parte que renderiza a tela da pessoas.
+
+  // Inicio da parte que renderiza a tela de freelancers.
   const renderUserFreelancer = ({ item }: { item: Freelancer } ) => (
     <View style={styles.data}>
       <View style={styles.areaTop}>
@@ -106,6 +125,7 @@ export default function Account() {
       </View>
     </View>
   );
+  // Fim da parte que renderiza a tela de freelancers.
 
   const renderVagaCard = ({ item }: { item: Vagas }) => (
     <View style={stylesVagas.item}>
@@ -122,7 +142,7 @@ export default function Account() {
               `Deseja realmente excluir a vaga "${item.name}"?`,
               [
                 { text: "Cancelar", style: "cancel" },
-                { text: "Excluir", onPress: () => handleDeleteVaga(item.id), style: "destructive" }
+                { text: "Excluir", onPress: () => handleDeleteVaga(item.uid), style: "destructive" }
               ]
             );
           }}
@@ -147,7 +167,7 @@ export default function Account() {
           onPress={() => {
             Alert.alert(
               "Excluir vaga",
-              `Deseja realmente excluir a vaga "${item.name}"?`,
+              `Deseja realmente excluir a vaga "${item.nome_vaga}"?`,
               [
                 { text: "Cancelar", style: "cancel" },
                 { text: "Excluir", onPress: () => handleDeleteVaga(item.id), style: "destructive" }
@@ -233,7 +253,7 @@ export default function Account() {
               {filteredVagas.length > 0 ? (
                 <FlatList
                   data={filteredVagas}
-                  keyExtractor={(item) => item.uid}
+                  keyExtractor={(item) => item.id}
                   renderItem={renderVagaCard}
                   scrollEnabled={false}
                 />
@@ -293,20 +313,23 @@ const styles = StyleSheet.create({
   },
   areaTop: {
     backgroundColor: colors.fundo2,
+    flexDirection: 'row',
+    alignItems: 'center',
     width: width,
     paddingVertical: 20,
     justifyContent: 'flex-end',
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    padding: 20,
   },
   title: {
     fontSize: 35,
     fontWeight: 'bold',
     color: colors.tituloBranco,
-    marginLeft: 30,
   },
   subTitle: {
     fontSize: 20,
     color: colors.cinza2,
-    marginLeft: 30,
     marginBottom: 10,
   },
   areaLow: {
@@ -348,6 +371,16 @@ const styles = StyleSheet.create({
     color: colors.tituloAmarelo,
     flexShrink: 1,
     textAlign: 'right'
+  },
+  fotoPerfil: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    marginRight: 10,
+  },
+  textContainer: {
+  flex: 1,
+  justifyContent: 'center',
   },
 });
 

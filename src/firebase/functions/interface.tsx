@@ -41,6 +41,8 @@ export interface Freelancer {
 
 
 export interface Vagas {
+    name: any;
+    uid: string;
     id: string;
     vaga_id: string,
     nome_vaga: string,
@@ -57,6 +59,8 @@ export interface Vagas {
 };
 
 export interface servicoFreelancer {
+    nome_vaga: any;
+    name: any;
     servico_id: string,
     uid_criadorServico: string,
     titulo_servico: string;
