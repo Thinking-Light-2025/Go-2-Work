@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react';    
+
 import { View, Text, StyleSheet, Alert, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
