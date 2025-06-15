@@ -126,7 +126,7 @@ export const FormEmpresa = () => {
             <TxtInput
               value={name}
               onChangeText={setName}
-              placeholder="..."
+              placeholder="Nome da Empresa"
               placeholderTextColor={colors.amarelo2}
             />
           </View>
@@ -136,7 +136,7 @@ export const FormEmpresa = () => {
             <TxtInput
               value={email}
               onChangeText={setEmail}
-              placeholder="..."
+              placeholder="Email empresarial para contato"
               placeholderTextColor={colors.amarelo2}
               keyboardType="email-address"
               autoCapitalize="none"
@@ -148,7 +148,7 @@ export const FormEmpresa = () => {
             <TxtInput
               value={descricao}
               onChangeText={setDescricao}
-              placeholder="..."
+              placeholder="Escreva uma breve descrição sobre a empresa"
               placeholderTextColor={colors.amarelo2}
               multiline
               numberOfLines={4}
@@ -161,7 +161,7 @@ export const FormEmpresa = () => {
             <TxtInput
               value={cnpj}
               onChangeText={setCnpj}
-              placeholder="..."
+              placeholder="CNPJ da empresa"
               placeholderTextColor={colors.amarelo2}
               keyboardType="numeric"
             />
@@ -172,7 +172,7 @@ export const FormEmpresa = () => {
             <TxtInput
               value={setor}
               onChangeText={setSetor}
-              placeholder="..."
+              placeholder="Em qual setor sua empresa atua"
               placeholderTextColor={colors.amarelo2}
             />
           </View>
@@ -182,7 +182,7 @@ export const FormEmpresa = () => {
             <TxtInput
               value={regiao}
               onChangeText={setRegiao}
-              placeholder="..."
+              placeholder="Em qual região sua empresa atua"
               placeholderTextColor={colors.amarelo2}
             />
           </View>
@@ -192,7 +192,7 @@ export const FormEmpresa = () => {
             <TxtInput
               value={password}
               onChangeText={setPassword}
-              placeholder="..."
+              placeholder="Senha para criar conta"
               secureTextEntry
               placeholderTextColor={colors.amarelo2}
             />
@@ -203,7 +203,7 @@ export const FormEmpresa = () => {
             <TxtInput
               value={confirmarPassword}
               onChangeText={setConfirmarPassword}
-              placeholder="..."
+              placeholder="Confirmas senha da conta"
               secureTextEntry
               placeholderTextColor={colors.amarelo2}
             />

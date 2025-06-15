@@ -123,17 +123,17 @@ export const FormFreelancer = () => {
             <TxtInput
               value={name}
               onChangeText={setName}
-              placeholder="..."
+              placeholder="Seu nome completo"
               placeholderTextColor={colors.amarelo2}
             />
           </View>
 
           <View style={styles.containerMed_AreaInput}>
-            <Text style={styles.containerMed_AreaInput_text}>Email:</Text>
+            <Text style={styles.containerMed_AreaInput_text}>Email para contato:</Text>
             <TxtInput
               value={email}
               onChangeText={setEmail}
-              placeholder="..."
+              placeholder="seu.email@example.com"
               placeholderTextColor={colors.amarelo2}
               keyboardType="email-address"
               autoCapitalize="none"
@@ -141,11 +141,11 @@ export const FormFreelancer = () => {
           </View>
 
           <View style={styles.containerMed_AreaInput}>
-            <Text style={styles.containerMed_AreaInput_text}>Descrição do agente:</Text>
+            <Text style={styles.containerMed_AreaInput_text}>Descrição do serviço:</Text>
             <TxtInput
               value={descricao}
               onChangeText={setDescricao}
-              placeholder="..."
+              placeholder="Fale um pouco sobre suas você e suas habilidades"
               placeholderTextColor={colors.amarelo2}
               multiline
               numberOfLines={4}
@@ -158,7 +158,7 @@ export const FormFreelancer = () => {
             <TxtInput
               value={setor}
               onChangeText={setSetor}
-              placeholder="..."
+              placeholder="Setor no qual setor você atua"
               placeholderTextColor={colors.amarelo2}
             />
           </View>
@@ -168,7 +168,7 @@ export const FormFreelancer = () => {
             <TxtInput
               value={regiao}
               onChangeText={setRegiao}
-              placeholder="..."
+              placeholder="Região na qual você trabalha"
               placeholderTextColor={colors.amarelo2}
             />
           </View>
@@ -188,7 +188,7 @@ export const FormFreelancer = () => {
             <TxtInput
               value={password}
               onChangeText={setPassword}
-              placeholder="..."
+              placeholder="Mínimo de 8 caracteres"
               secureTextEntry
               placeholderTextColor={colors.amarelo2}
             />
@@ -199,7 +199,7 @@ export const FormFreelancer = () => {
             <TxtInput
               value={confirmarPassword}
               onChangeText={setConfirmarPassword}
-              placeholder="..."
+              placeholder="Mínimo de 8 caracteres"
               secureTextEntry
               placeholderTextColor={colors.amarelo2}
             />

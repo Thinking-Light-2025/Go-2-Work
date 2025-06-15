@@ -9,7 +9,7 @@ import { useRouter } from 'expo-router';
 
 // Iports de componentes nativos
 import { colors } from '@/src/components/global';
-import { BotãoInicio, StatusBarObject } from '@/src/components/objects';
+import { BotãoInicio, StatusBarObject, Botão } from '@/src/components/objects';
 import { width, Vagas } from '@/src/firebase/functions/interface';
 
 // Imports do firebase

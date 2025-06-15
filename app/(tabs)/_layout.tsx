@@ -2,6 +2,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
 import { colors } from '@/src/components/global';
 import { Ionicons } from '@expo/vector-icons';
+import { Botão, TxtInput } from '@/src/components/objects';
 
 export default function Layout() {
   return (

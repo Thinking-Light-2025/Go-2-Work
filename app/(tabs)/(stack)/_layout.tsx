@@ -13,7 +13,6 @@ export default function Layout() {
             <Stack.Screen
             name="minhaCandidaturaDetalhes"
             />
-
         </Stack>
     )
 }
