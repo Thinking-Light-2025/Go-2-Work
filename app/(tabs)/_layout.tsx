@@ -155,7 +155,7 @@ export default function Layout() {
         <Drawer.Screen 
           name="(stack)"
           options={{
-            title: "stack",
+            title: "Candidaturas",
             headerTitleStyle: {
               color: colors.tituloBranco
             },

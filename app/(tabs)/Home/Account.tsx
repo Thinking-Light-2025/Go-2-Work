@@ -2,7 +2,7 @@
 
 // Imports do React
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, StyleSheet, ActivityIndicator, ScrollView, Alert, TouchableOpacity, Image } from 'react-native';
+import { View, Text, FlatList, StyleSheet, ActivityIndicator, ScrollView, Alert, TouchableOpacity } from 'react-native';
 
 // Imports do Expo
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -56,7 +56,6 @@ export default function Account() {
   const renderUserEmpresa = ({ item }: { item: Empresas }) => (
     <View style={styles.data}>
       <View style={styles.areaTop}>
-        <Image source={{uri: 'https://reactjs.org/logo-og.png'}} style={styles.fotoPerfil}/>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{item.nome_empresa}</Text>
         <Text style={styles.subTitle}>{item.email}</Text>
@@ -82,8 +81,10 @@ export default function Account() {
   const renderUserPessoa = ({ item }: { item: Users }) => (
     <View style={styles.data}>
       <View style={styles.areaTop}>
+        <View style={styles.textContainer}>
         <Text style={styles.title}>{item.name_conta}</Text>
         <Text style={styles.subTitle}>{item.email}</Text>
+        </View>
       </View>
       <View style={styles.areaLow}>
         <View style={styles.areaLow_top}>
@@ -95,9 +96,23 @@ export default function Account() {
           </View>
         </View>
         <View style={styles.areaLow_low}><Text style={styles.areaLow_low_text}>Contato:</Text><Text style={styles.areaLow_low_text2}>{item.email}</Text></View>
-        <View style={styles.areaLow_low}><Text style={styles.areaLow_low_text}>Senha:</Text><Text style={styles.areaLow_low_text2}>{item.senha}</Text></View>
         <View style={styles.areaLow_low}><Text style={styles.areaLow_low_text}>Telefone:</Text><Text style={styles.areaLow_low_text2}>{item.telefone}</Text></View>
-        <View style={styles.areaLow_low}><Text style={styles.areaLow_low_text}>Links:</Text><Text style={styles.areaLow_low_text2}>{item.links_externos}</Text></View>
+        <View style={styles.areaLow_low}><Text style={styles.areaLow_low_text}>Contatos:</Text><Text style={styles.areaLow_low_text2}>{item.instagram}</Text></View>
+      </View>
+      <View style={styles.areaLow}>
+        <View style={styles.areaLow_top}>
+          <View style={styles.areaLow_areaInfor}>
+            <Text style={styles.areaLow_top_text}>Descrição</Text>
+            <TouchableOpacity onPress={() => router.replace('/(tabs)/Config')}>
+              <AntDesign name="rightcircle" size={30} color={colors.amarelo2} />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.areaLow_low}>
+          <View style={styles.boxTexto}>
+            <Text style={styles.areaLow_low_text}>{item.desc_sobre}</Text>
+          </View>
+        </View>
       </View>
     </View>
   );
@@ -263,25 +278,6 @@ export default function Account() {
             </View>
           </>
         )}
-
-          {/* {tipoConta === 'Freelancer' && (
-            <>
-              <Text style={styles.sectionTitle}>Seus serviços freelancer:</Text>
-              <View style={stylesVagas.AreaVagasView}>
-                {filteredServicos.length > 0 ? (
-                  <FlatList
-                    data={filteredServicos}
-                    keyExtractor={(item) => item.id}
-                    renderItem={renderServicoCard}
-                    scrollEnabled={false}
-                  />
-                ) : (
-                  <Text style={stylesVagas.emptyMessage}>Você não tem serviços postados ainda.</Text>
-                )}
-              </View>
-            </>
-          )} */}
-
       </ScrollView>
     </View>
   );
@@ -381,6 +377,15 @@ const styles = StyleSheet.create({
   textContainer: {
   flex: 1,
   justifyContent: 'center',
+  },
+  boxTexto: {
+    width: '100%',
+    height: '100%',
+    borderWidth: 2,
+    borderRadius: 8,
+    padding: 10,
+
+    borderColor: colors.amarelo2,
   },
 });
 

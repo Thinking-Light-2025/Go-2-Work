@@ -5,6 +5,7 @@ import { auth, db } from "../config";
 import { doc, getDoc } from "firebase/firestore";
 
 export interface Users {
+    uid: string;
     email: string,
 
     name_conta: string,
@@ -13,6 +14,7 @@ export interface Users {
     endereco: string,
     desc_sobre: string,
     links_externos: string,
+    instagram: string,
 }
 export interface Empresas {
     uid: string,
