@@ -1,19 +1,9 @@
-// Account.tsx
-
-// Imports do React
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, ActivityIndicator, ScrollView, Alert, TouchableOpacity } from 'react-native';
-
-// Imports do Expo
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-
-// Imports de componentes nativos
 import { colors } from '@/src/components/global';
 import { StatusBarObject, Botão } from '@/src/components/objects';
-
-
-// Imports do Firebase
 import { Users, Vagas, width, height, Empresas, Freelancer, servicoFreelancer } from '@/src/firebase/functions/interface';
 import { dados_usuario, userServicos, userVagas } from '@/src/firebase/functions/get/getInforUser';
 import { handleDeleteVaga } from '@/src/firebase/functions/delete/deleteJob';

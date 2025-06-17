@@ -1,9 +1,7 @@
-// login.tsx
-
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
 import { Link, useRouter } from 'expo-router';
-import { TxtInput, Botão, StatusBarObject } from '../src/components/objects';
+import { TxtInput, Botão, StatusBarObject, TxtInputLogin } from '../src/components/objects';
 import { colors } from '@/src/components/global';
 import { width } from '@/src/firebase/functions/interface';
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -55,10 +53,10 @@ export default function Login() {
         />
 
         <Text style={styles.cardBottom_text}>Digite sua senha:</Text>
-        <TxtInput
+        <TxtInputLogin
           placeholder="Senha"
           placeholderTextColor={colors.tituloBranco}
-          secureTextEntry
+          isPassword={true}
           value={password}
           onChangeText={setPassword}
         />

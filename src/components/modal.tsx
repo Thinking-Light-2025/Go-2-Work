@@ -9,7 +9,7 @@ type Item = {
     nome_vaga: string;
     nome_empresa: string;
     salario: number;
-    descricaoVaga: string;
+    descricao: string;
     modalidade: string;
     email: string;
     localizacao: string;
@@ -44,7 +44,7 @@ const MyModal: React.FC<MyModalProps> = ({ visible, onClose, item }) => {
                                 <Text style={styles.modalText}>Localização: {item.localizacao}</Text>
                                 <Text style={styles.modalText}>Setor social: {item.setor}</Text>
                                 <Text style={styles.modalText}>Regime da vaga: {item.regime}</Text>
-                                <Text style={styles.modalText}>Descrição: {item.descricaoVaga}</Text>
+                                <Text style={styles.modalText}>Descrição: {item.descricao}</Text>
                             </ScrollView>
 
                             <View style={styles.buttonContainer}>

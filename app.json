@@ -2,7 +2,8 @@
   "expo": {
     "name": "Go-2-Work",
     "slug": "Go-2-Work",
-    "version": "2.0.0",
+    "owner": "lucym_tbate",
+    "version": "4.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/Logo_Thinking_Light.png",
     "scheme": "myapp",
@@ -39,7 +40,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "28415851-fc82-42ce-9db1-2191851833f0"
+        "projectId": "fbadc7e2-eeb9-40a2-81fa-b4100fb099fe"
       }
     }
   }

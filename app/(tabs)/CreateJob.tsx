@@ -1,10 +1,7 @@
-// CreateJob.tsx
-
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { colors } from '@/src/components/global';
 import FormVagaCLT from '@/src/firebase/forms/FormVagaCLT'; // componente de vaga CLT
-import { FormFreelancer } from '../../src/firebase/forms/formFreelancer'; // componente de serviço freelancer
 import { StatusBarObject } from '@/src/components/objects';
 import FormServicosFree from '@/src/firebase/forms/FormServicosFree';
 

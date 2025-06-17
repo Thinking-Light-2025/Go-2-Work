@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, StyleSheet, Dimensions, TouchableOpacity, ActivityIndicator, StatusBar } from 'react-native';
-import { Link, useRouter } from 'expo-router';
+import { Text, View, StyleSheet, Dimensions, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { useRouter } from 'expo-router';
 import { colors } from '../src/components/global';
-import { StatusBarObject } from '../src/components/objects';
 
-const { width, height } = Dimensions.get('window');
+import { StatusBarObject } from '../src/components/objects';
+import { Image } from 'react-native';
+
+
+const { width } = Dimensions.get('window');
 
 export default function Index() {
   const router = useRouter();
@@ -31,30 +34,30 @@ export default function Index() {
   }
 
   return (
-    <View style={styles.container}>
-      <StatusBarObject />
-      
-      <View style={styles.bottomContainer}>
-        <Text style={styles.Title}>Go 2 Work</Text>
-        <Text style={styles.subTitle}>Criado pela Thinking Light</Text>
+<View style={styles.container}>
+  <StatusBarObject />
 
-        <View style={styles.viewButton}>
-          <View style={styles.areaButton}>
-            <TouchableOpacity style={styles.buttonLogin} onPress={handleLoginPress}>
-              <Text style={styles.buttonText}>Entre na sua conta</Text>
-            </TouchableOpacity>
+  <View style={styles.bottomContainer}>
 
-            <TouchableOpacity style={styles.buttonCreate} onPress={handleCreateAccountPress}>
-              <Text style={styles.buttonText2}>Crie sua conta</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+    <Image source={require('../src/assets/logoProjeto.png')} style={styles.logo} />
 
-        <Link href="/(tabs)/Geral" style={styles.linkText}>
-          Entrar em uma conta
-        </Link>
+    <Text style={styles.Title}>Go 2 Work</Text>
+    <Text style={styles.subTitle}>Criado pela Thinking Light</Text>
+
+    <View style={styles.viewButton}>
+      <View style={styles.areaButton}>
+        <TouchableOpacity style={styles.buttonLogin} onPress={handleLoginPress}>
+          <Text style={styles.buttonText}>Entre na sua conta</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.buttonCreate} onPress={handleCreateAccountPress}>
+          <Text style={styles.buttonText2}>Crie sua conta</Text>
+        </TouchableOpacity>
       </View>
     </View>
+  </View>
+</View>
+
   );
 }
 
@@ -65,6 +68,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: colors.preto
   },
+  logo: {
+  width: 170,     // Ajuste o tamanho como quiser
+  height: 170,
+  marginBottom: 20,
+  resizeMode: 'contain',
+},
   Title: {
     fontSize: 50,
     color: colors.amarelo2,

@@ -1,5 +1,3 @@
-// Avisos.tsx
-
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { collection, query, where, onSnapshot, getDocs, doc, getDoc } from 'firebase/firestore';

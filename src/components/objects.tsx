@@ -1,6 +1,8 @@
-import { StatusBar, StatusBarProps, TouchableOpacity, TouchableOpacityProps, StyleSheet} from "react-native"
+import { StatusBar, StatusBarProps, TouchableOpacity, TouchableOpacityProps, StyleSheet, View} from "react-native"
 import { colors } from "./global"
 import { TextInput, TextInputProps } from "react-native"
+import { Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
 // import { width } from "../firebase/functions/interfaces"
 
 export function Botão({ style, ...rest }: TouchableOpacityProps & { style?: any }) {
@@ -99,6 +101,63 @@ export function TxtInput({style, ...rest }: TextInputProps) {
     />
   )
 }
+
+interface TxtInputLoginProps extends React.ComponentProps<typeof TextInput> {
+  isPassword?: boolean;
+}
+
+export function TxtInputLogin({ style, isPassword, ...rest }: TxtInputLoginProps) {
+  const [secureText, setSecureText] = useState(isPassword ?? false);
+
+  const toggleSecureText = () => {
+    setSecureText(!secureText);
+  };
+
+  return (
+    <View style={styles3.inputContainer}>
+      <TextInput
+        style={[styles3.input, style]}
+        secureTextEntry={secureText}
+        placeholderTextColor="#ccc"
+        {...rest}
+      />
+
+      {isPassword && (
+        <TouchableOpacity onPress={toggleSecureText} style={styles3.eyeIcon}>
+          <Ionicons
+            name={secureText ? 'eye-off' : 'eye'}
+            size={24}
+            color={colors.amarelo2}
+          />
+        </TouchableOpacity>
+      )}
+    </View>
+  );
+}
+
+const styles3 = StyleSheet.create({
+  inputContainer: {
+    width: '90%',
+    height: 55,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderColor: colors.amarelo2,
+    borderWidth: 1.2,
+    borderRadius: 8,
+    paddingLeft: 20,
+    paddingRight: 20,
+    backgroundColor: 'transparent',
+  },
+  input: {
+    flex: 1,
+    color: 'white',
+    fontSize: 16,
+  },
+  eyeIcon: {
+    marginLeft: 10,
+  },
+});
+
 
 export function TextArea({ ...rest }: TextInputProps) {
   return (
