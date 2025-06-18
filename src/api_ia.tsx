@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '';
+const API_KEY = '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';
 
 export async function iaConexao(message: string) {
   try {
