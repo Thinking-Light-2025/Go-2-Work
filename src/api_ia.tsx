@@ -1,6 +1,11 @@
 import axios from 'axios';
+require('dotenv').config();
 
-const API_KEY = '';
+const API_KEY = process.env.A_API_KEY;
+
+if (!API_KEY) {
+  throw new Error('Chave da API não definida. Verifique o arquivo .env');
+}
 
 export async function iaConexao(message: string) {
   try {

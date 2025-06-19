@@ -26,7 +26,7 @@ export const FormEmpresa = () => {
   const tipo_conta = 'Empresa';
 
   // Define uma imagem de perfil padrão local
-  const defaultProfileImage = require('@/src/images/profile.png'); // Certifique-se do caminho correto!
+  const defaultProfileImage = require('@/src/assets/profile.png'); // Certifique-se do caminho correto!
 
   /** DÁ PARA COMPONENTIZAR
    * @function pickImage
