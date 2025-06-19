@@ -1,6 +1,11 @@
 import axios from 'axios';
+require('dotenv').config();
 
-const API_KEY = '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';
+const API_KEY = process.env.A_API_KEY;
+
+if (!API_KEY) {
+  throw new Error('Chave da API não definida. Verifique o arquivo .env');
+}
 
 export async function iaConexao(message: string) {
   try {
